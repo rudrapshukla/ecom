@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxora - Premium E-Commerce</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#" class="logo">
+                    <span class="logo-icon">✨</span>
+                    <span class="logo-text">Luxora</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="search-input" 
+                        placeholder="Search products..."
+                    >
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <div class="theme-toggle-track">
+                        <span class="theme-icon sun-icon">☀️</span>
+                        <span class="theme-icon moon-icon">🌙</span>
+                        <div class="theme-toggle-thumb"></div>
+                    </div>
+                </button>
+
+                <button class="cart-btn" id="cartBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Excellence</h1>
+            <p class="hero-subtitle">Curated collection of premium products for modern living</p>
+            <button class="cta-button" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                Explore Now
+            </button>
+        </div>
+        <div class="hero-gradient"></div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">Featured Collection</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+            <div class="no-results" id="noResults" style="display: none;">
+                <p>No products found. Try adjusting your search.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="product-modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="product-detail">
+                <div class="product-image-container" id="modalImageContainer">
+                    <img id="modalImage" src="" alt="Product" class="product-detail-image">
+                </div>
+                <div class="product-info">
+                    <h2 id="modalTitle" class="product-title"></h2>
+                    <p id="modalDescription" class="product-description"></p>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <span id="modalRating" class="stars"></span>
+                            <span id="modalReviews" class="reviews-count"></span>
+                        </div>
+                        <div class="price-section">
+                            <span id="modalPrice" class="price"></span>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-btn" id="addToCartBtn">
+                        <span class="btn-text">Add to Cart</span>
+                        <span class="btn-icon">➕</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
